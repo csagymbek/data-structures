@@ -10,9 +10,11 @@ class BST {
   constructor(root = null) {
     this.root = root;
   }
+
   add(val) {
     if (!this.root) {
       this.root = new Node(val);
+      return;
     } else {
       const searchNode = (node) => {
         if (val === node.val) {
@@ -37,10 +39,28 @@ class BST {
       searchNode(this.root);
     }
   }
+
+  findMin() {
+    let rootNode = this.root;
+    while (rootNode.left) {
+      rootNode = rootNode.left;
+    }
+    return rootNode.val;
+  }
+
+  findMax() {
+    let rootNode = this.root;
+    while (rootNode.right) {
+      rootNode = rootNode.right;
+    }
+    return rootNode.val;
+  }
 }
 
 const newBST = new BST();
 newBST.add(0);
 newBST.add(-1);
 newBST.add(1);
+console.log(newBST.findMin());
+console.log(newBST.findMax());
 console.log(newBST);
