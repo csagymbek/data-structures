@@ -187,7 +187,24 @@ class BST {
     }
   }
 
-  levelOrder() {}
+  levelOrder() {
+    const res = [];
+    const queue = [];
+    if (this.root) {
+      queue.push(this.root);
+      while (queue.length) {
+        const queueNode = queue.shift();
+        res.push(queueNode.val);
+        if (queueNode.left) {
+          queue.push(queueNode.left);
+        }
+        if (queueNode.right) [queue.push(queueNode.right)];
+      }
+      return res;
+    } else {
+      return null;
+    }
+  }
 }
 
 const newBST = new BST();
