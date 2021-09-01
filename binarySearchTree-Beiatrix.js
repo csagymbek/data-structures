@@ -86,7 +86,7 @@ class BST {
       res.push(node.val);
       if (node.right) traverse(node.right);
     };
-    return traverse(this.root);
+    traverse(this.root);
     return res;
   }
 
@@ -97,7 +97,7 @@ class BST {
       if (node.left) traverse(node.left);
       if (node.right) traverse(node.right);
     };
-    return traverse(this.root);
+    traverse(this.root);
     return res;
   }
 
@@ -108,7 +108,7 @@ class BST {
       if (node.right) traverse(node.right);
       res.push(node.val);
     };
-    return traverse(this.root);
+    traverse(this.root);
     return res;
   }
 
@@ -118,7 +118,7 @@ class BST {
     queue.push(this.root);
     while (queue.length) {
       let currentNode = queue.shift();
-      res.push(currentNode);
+      res.push(currentNode.val);
       if (currentNode.left) queue.push(currentNode.left);
       if (currentNode.right) queue.push(currentNode.right);
     }
@@ -134,7 +134,13 @@ newBST.insert(2);
 newBST.insert(12);
 newBST.insert(28);
 newBST.insert(39);
-console.log(newBST.size());
-console.log(newBST.min());
-console.log(newBST.max());
-console.log(newBST);
+// console.log(newBST.size());
+// console.log(newBST.min());
+// console.log(newBST.max());
+// console.log(newBST.contains(39));
+// // console.log(newBST.contains(1));
+// console.log(newBST.inorderDFS());
+// console.log(newBST.preorderDFS());
+// console.log(newBST.postorderDFS());
+console.log(newBST.bfs());
+// console.log(newBST);

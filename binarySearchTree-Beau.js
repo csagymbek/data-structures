@@ -228,6 +228,8 @@ newBST.add(10);
 console.log(newBST.findMinHeight());
 console.log(newBST.findMaxHeight());
 console.log(newBST.isBalanced());
+console.log(newBST.isPresent(22));
+console.log(newBST.isPresent(21));
 console.log(newBST.inOrder());
 console.log(newBST.preOrder());
 console.log(newBST.postOrder());
